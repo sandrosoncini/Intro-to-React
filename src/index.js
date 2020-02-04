@@ -8,6 +8,8 @@ import * as serviceWorker from './serviceWorker';
 // PascalCase is the naming convention for react components.
 // Components whose names does not begin with a capital letter,
 // will be interpretted as a plain HTML tag.
+
+//Questiond details component
 const QuestionDetails = () => {
     return (
       <div>
@@ -21,10 +23,23 @@ const QuestionDetails = () => {
     );
   };
 
+// AswerDetails Compnent
+
+const AnswerDetails = () =>{
+    return (
+        <div>
+        <p>
+          Red <br />
+          By Code Core
+        </p>
+        <p>Answer 2 seconds ago</p>
+
+        </div>
+    )
+}
 
 
-
-ReactDOM.render(<QuestionDetails />, document.getElementById('root'));
+ReactDOM.render(<AnswerDetails  />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
