@@ -6,7 +6,12 @@ export const AnswerDetails = (props) =>{
         <div>
         <p>
           {props.body}. <br />
-          By {props.author.full_name}
+          By <small style={{
+            color: "red",
+            fontStyle: "italic" 
+          }}>
+          {props.author.full_name}
+          </small>
         </p>
         <small>{props.created_at.toLocaleString()}</small>
 

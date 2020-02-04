@@ -9,7 +9,10 @@ export const QuestionDetails = props => {
           {props.body} <br />
           By {props.author.full_name}
         </p>
-        <small>
+        <small style ={{
+            margin: '2am',
+            backgroundColor: "green"
+        }}>
           Seen {props.view_count} times - {props.created_at.toLocaleString()}
         </small>
       </div>

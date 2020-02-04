@@ -1,6 +1,9 @@
 import React from 'react';
+
+import "./css/QuestionShowPage.css"
 import {QuestionDetails} from './QuestionsDetails'
-import {AnswerDetails} from './AnswerDetails'
+import {AnswerList} from './AnswerList'
+import oneQuestionData from '../OneQuestionData'
 
 // question Show page component 
  const QuestionShowPage =()=>{
@@ -14,10 +17,8 @@ import {AnswerDetails} from './AnswerDetails'
          created_at={new Date()}
         
         />
-        <AnswerDetails
-        body= "Amarelle e Vermilion"
-        author={{ full_name: "Sandro Soncini" }}
-        created_at={new Date()}
+        <AnswerList
+        answers={oneQuestionData.answers}
         />
         
         </div>
