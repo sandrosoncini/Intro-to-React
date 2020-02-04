@@ -10,29 +10,31 @@ import * as serviceWorker from './serviceWorker';
 // will be interpretted as a plain HTML tag.
 
 //Questiond details component
-const QuestionDetails = () => {
+const QuestionDetails = props => {
     return (
       <div>
-        <h2>What is your favourite color?</h2>
+        <h2>{props.title}</h2>
         <p>
-          Red, green, magenta, etc. <br />
-          By Michael Owen
+          {props.body} <br />
+          By {props.author.full_name}
         </p>
-        <small>Seen 10 times - Created 10 days ago</small>
+        <small>
+          Seen {props.view_count} times - {props.created_at.toLocaleString()}
+        </small>
       </div>
     );
   };
 
 // AswerDetails Compnent
 
-const AnswerDetails = () =>{
+const AnswerDetails = (props) =>{
     return (
         <div>
         <p>
-          Red <br />
-          By Code Core
+          {props.body}. <br />
+          By {props.author.full_name}
         </p>
-        <p>Answer 2 seconds ago</p>
+        <small>{props.created_at.toLocaleString()}</small>
 
         </div>
     )
@@ -42,8 +44,19 @@ const AnswerDetails = () =>{
 const QuestionShowPage =()=>{
     return (
         <div>
-        <QuestionDetails/>
-        <AnswerDetails/>
+        <QuestionDetails
+         title="What is your favorite colour "
+         body="Red, Green"
+         author={{ full_name: "Michael Owen" }}
+         view_count={100}
+         created_at={new Date()}
+        
+        />
+        <AnswerDetails
+        body= "Amarelo e Vermelho"
+        author={{ full_name: "Sandro Soncini" }}
+        created_at={new Date()}
+        />
         
         </div>
     )
